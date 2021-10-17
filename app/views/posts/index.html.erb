@@ -1,4 +1,9 @@
 <h1>投稿一覧</h1>
+
+<%= form_with model: @post, local: true do |f| %>
+  <%= f.text_field :body, required: true %> <%= f.submit "送信" %>
+<% end %>
+
 <%= render partial: "post", collection: @posts %>
 
 <%= paginate @posts %>
